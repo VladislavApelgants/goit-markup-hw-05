@@ -148,6 +148,17 @@ img {
 
 .link.current {
   color: var(--active-color);
+  position: relative;
+}
+.link.current::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  border-bottom: 4px solid var(--active-color);
+  border-radius: 2px;
 }
 
 .header-contacts-list {
@@ -421,12 +432,25 @@ img {
 }
 
 .work-item {
+  position: relative;
+
   width: calc((100% - 2 * 30px) / 3);
   margin-right: 30px;
 }
 
 .work-item:nth-child(3n) {
   margin-right: 0;
+}
+.work-text {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(47, 48, 58, 0.8);
+  color: var(--primary-white-color);
 }
 
 .work-title,
@@ -562,5 +586,31 @@ img {
 .link-card:focus {
   display: block;
   box-shadow: var(--card-shadow-portfolio);
+}
+
+.link-card:hover .thumb-description,
+.link-card:focus .thumb-description {
+  opacity: 1;
+}
+
+.portfolio-thumb {
+  position: relative;
+}
+.thumb-description {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+
+  color: #ffffff;
+  background-color: rgba(33, 150, 243, 0.9);
+  opacity: 0;
 }
 /*#endregion -------------------- Portfolio end -------------------- */
